@@ -26,8 +26,8 @@
     .description {
         font-size: 24px;
         margin-bottom: 4px;
-        min-width: 400px;
-        white-space: wrap;
+        max-width: 700px;
+        white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }

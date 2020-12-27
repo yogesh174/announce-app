@@ -39,13 +39,16 @@
     }
 
     .logo {
-        font-size: 28px;
         flex: 1;
+    }
+
+    .logo a {
+        font-size: 28px;
     }
 </style>
 
 <header>
-    <a href="/#" class="logo">Announce</a>
+    <div class="logo"><a href="/#">Announce</a></div>
     <nav>
         <ul>
             {#each navList as nav}
