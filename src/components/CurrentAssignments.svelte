@@ -7,6 +7,16 @@
     export let dueDate = "26/12/2020";
     let linkDate = dueDate.split("/").reverse().join("-");
     let resources = ["exp1_forwardbias.doc", "Electronics_lab_manual.pdf"];
+    
+    async function getassignments() {
+        let resp = await fetch('https://raw.githubusercontent.com/dev-group-ss/db/main/current-assign.json');
+        let op = await resp.text();
+        op = JSON.parse(op);
+        return op
+    }
+
+    var assignments = getassignments();
+
 </script>
 
 <style>
@@ -27,7 +37,7 @@
         font-size: 24px;
         margin-bottom: 4px;
         max-width: 700px;
-        white-space: nowrap;
+        white-space: wrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }
@@ -56,16 +66,26 @@
     }
 </style>
 
-<main>
-    <div class="title">
-        <div class="description">{description}</div>
-        <div class="class-name">{className}</div>
-    </div>
-    <div class="date-info">
-        <div class="due-date">Due: <span>{dueDate}</span></div>
-        <Button
-            description="add to calendar"
-            type="calendar"
-            link={calendar(linkDate, description)} />
-    </div>
-</main>
+
+{#await assignments}
+    <div>Loading...</div>
+{:then assignments}
+    {#each assignments as assignment}
+        <main>
+            <div class="title">
+                <div class="description">{assignment.description}</div>
+                <div class="class-name">{assignment.course}</div>
+            </div>
+            <div class="date-info">
+                <div class="due-date">Due: <span>{assignment.due}</span></div>
+                <Button
+                    description="add to calendar"
+                    type="calendar"
+                    link={calendar(assignment.due.split("/").reverse().join("-"), assignment.description)} />
+            </div>
+        </main>
+    {/each}
+{:catch error}
+    <p style="color: red">{error.message}</p>
+{/await}
+

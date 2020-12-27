@@ -1,6 +1,18 @@
 <script>
-    export let description =
-        "COA class has been canceled on Thursday, 24/12/20";
+
+    // export let description =
+    //     "COA class has been canceled on Thursday, 24/12/20";
+
+    async function getdescriptions() {
+        let resp = await fetch('https://raw.githubusercontent.com/dev-group-ss/db/main/notification.json');
+        let op = await resp.text();
+        op = JSON.parse(op);
+        return op
+    }
+
+    var descriptions = getdescriptions();
+    
+
 </script>
 
 <style>
@@ -20,5 +32,13 @@
 </style>
 
 <main>
-    <div class="description">{description}</div>
+    {#await descriptions}
+        <div>Loading...</div>
+    {:then descriptions}
+        {#each descriptions as description}
+            <div class="description">{description.description}</div>
+        {/each}
+    {:catch error}
+        <p style="color: red">{error.message}</p>
+    {/await}
 </main>
