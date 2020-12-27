@@ -1,5 +1,31 @@
 <script>
-    import Card from "./icon_card.svelte";
+    import Button from "./Button.svelte";
+    import CurrentAssignments from "./CurrentAssignments.svelte";
+
+    let meetLinks = [
+        {
+            description: "EDC-Lab",
+            link: "https://meet.google.com",
+            type: "meet",
+            active: true,
+        },
+        {
+            description: "EDC",
+            link: "https://meet.google.com",
+            type: "meet",
+            active: false,
+        },
+    ];
 </script>
 
-<Card description="EDC" icon="video.svg"/>
+<style>
+    main {
+        display: flex;
+    }
+</style>
+
+<main>
+    {#each meetLinks as item}
+        <Button {...item} icon="video.svg" />
+    {/each}
+</main>

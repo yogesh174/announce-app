@@ -1,28 +1,24 @@
 <script>
-    export let description = "COA class has been canceled on Thursday, 24/12/20";
+    export let description =
+        "COA class has been canceled on Thursday, 24/12/20";
 </script>
-
-<main>
-    <div class="container">
-        <p class="description">{description}</p>
-    </div>
-</main>
 
 <style>
     main {
-        background-color: #0C0F16;
+        background-color: #0c0f16;
         border-radius: 10px;
         border-width: 1px;
         border-color: #202020;
         border-style: solid;
-    }
-    .container {
-        padding: 5px 10px 5px 10px;        
+        padding: 24px 36px;
     }
 
     .description {
-        font-size: 24px; 
-        /* width: 500px; */
+        font-size: 20px;
+        text-align: justify;
     }
-
 </style>
+
+<main>
+    <div class="description">{description}</div>
+</main>

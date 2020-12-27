@@ -17,6 +17,8 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
-    "sirv-cli": "^1.0.0"
+    "sirv-cli": "^1.0.0",
+    "svelte-feather": "git+https://github.com/novacbn/svelte-feather.git#0.0.1",
+    "svelte-spa-router": "^3.1.0"
   }
 }

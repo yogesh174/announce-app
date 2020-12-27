@@ -1,51 +1,56 @@
-<header>
-    <a href="/#" class="logo">Announce</a>
-    <nav>
-        <ul>
-            <li><a href="/#">Home</a></li>
-            <li><a href="/#">Assignments</a></li>
-            <li><a href="/#">Time Tables</a></li>
-            <li><a href="/#">Resources</a></li>
-        </ul>
-    </nav>
-</header> 
+<script>
+    let navList = [
+        { name: "Home", link: "/#" },
+        { name: "Assignments", link: "/#/assignments" },
+        { name: "Time Tables", link: "/#/timetables" },
+        { name: "Resources", link: "/#/resources" },
+    ];
+</script>
 
 <style>
-    nav {
-        margin: 0 0 0 50px;
-        height: 100px;
-    }
-
     ul {
         list-style-type: none;
-        /* margin: 0; */
-        /* padding: 0; */
         display: flex;
     }
-    
+
     a {
         text-decoration: none;
-        color: #F0F6FC;
+        color: #f0f6fc;
         display: block;
         padding: 10px 20px;
-        font-size: 20px;
+        font-size: 18px;
     }
 
     li > a:hover {
         text-decoration: underline;
     }
 
+    nav {
+        display: flex;
+        align-items: center;
+    }
+
     header {
-        background-color: #0C0F16;
+        background-color: #0c0f16;
         display: flex;
         align-items: center;
         box-shadow: 0 1px #202020;
-        /* padding: 100px; */
+        padding: 0 calc(15% / 2);
     }
 
     .logo {
-        padding-left: 100px;
         font-size: 28px;
+        flex: 1;
     }
-
 </style>
+
+<header>
+    <a href="/#" class="logo">Announce</a>
+    <nav>
+        <ul>
+            {#each navList as nav}
+                <li><a href={nav.link}>{nav.name}</a></li>
+            {/each}
+        </ul>
+    </nav>
+</header>
