@@ -1,22 +1,17 @@
 <script>
     import calendar from "./calendar.js";
     import Button from "./Button.svelte";
-    export let description =
-        "Make a lab report (2 pages) showing Forward-Bias pn diode charachteristics";
-    export let className = "EDC-Lab";
-    export let dueDate = "26/12/2020";
-    let linkDate = dueDate.split("/").reverse().join("-");
-    let resources = ["exp1_forwardbias.doc", "Electronics_lab_manual.pdf"];
-    
-    async function getassignments() {
-        let resp = await fetch('https://raw.githubusercontent.com/dev-group-ss/db/main/current-assign.json');
+
+    async function getAssignments() {
+        let resp = await fetch(
+            "https://raw.githubusercontent.com/dev-group-ss/db/main/current-assign.json"
+        );
         let op = await resp.text();
         op = JSON.parse(op);
-        return op
+        return op;
     }
 
-    var assignments = getassignments();
-
+    var assignments = getAssignments();
 </script>
 
 <style>
@@ -66,7 +61,6 @@
     }
 </style>
 
-
 {#await assignments}
     <div>Loading...</div>
 {:then assignments}
@@ -81,11 +75,15 @@
                 <Button
                     description="add to calendar"
                     type="calendar"
-                    link={calendar(assignment.due.split("/").reverse().join("-"), assignment.description)} />
+                    link={calendar(assignment.due
+                            .split('/')
+                            .reverse()
+                            .join(
+                                '-'
+                            ), `${assignment.title} ${assignment.course}`, assignment.description)} />
             </div>
         </main>
     {/each}
 {:catch error}
     <p style="color: red">{error.message}</p>
 {/await}
-

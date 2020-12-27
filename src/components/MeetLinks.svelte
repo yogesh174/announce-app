@@ -3,28 +3,15 @@
     import CurrentAssignments from "./CurrentAssignments.svelte";
 
     async function getLinks() {
-        let resp = await fetch('https://raw.githubusercontent.com/dev-group-ss/db/main/meet-links.json');
+        let resp = await fetch(
+            "https://raw.githubusercontent.com/dev-group-ss/db/main/meet-links.json"
+        );
         let op = await resp.text();
         op = JSON.parse(op);
-        return op
+        return op;
     }
 
     let meetLinks = getLinks();
-
-    // let meetLinks = [
-    //     {
-    //         description: "EDC-Lab",
-    //         link: "https://meet.google.com",
-    //         type: "meet",
-    //         active: true,
-    //     },
-    //     {
-    //         description: "EDC",
-    //         link: "https://meet.google.com",
-    //         type: "meet",
-    //         active: false,
-    //     },
-    // ];
 </script>
 
 <style>
