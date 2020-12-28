@@ -5,5 +5,5 @@ export default {
   '/': Home,
   '/assignments': Working,
   '/timetables': Working,
-  '/reesources': Working,
+  '/resources': Working,
 }

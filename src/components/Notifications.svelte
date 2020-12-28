@@ -13,6 +13,7 @@
 
 <style>
     main {
+        font-family: "DM Sans", sans-serif;
         background-color: #0c0f16;
         border-radius: 10px;
         border-width: 1px;
@@ -23,7 +24,17 @@
 
     .description {
         font-size: 20px;
-        text-align: justify;
+    }
+
+    @media (max-width: 600px) {
+        main {
+            padding: 18px 24px;
+        }
+
+        .description {
+            font-size: 18px;
+            line-height: 150%;
+        }
     }
 </style>
 

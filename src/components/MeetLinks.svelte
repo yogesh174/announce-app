@@ -16,6 +16,7 @@
 
 <style>
     main {
+        font-family: "DM Sans", sans-serif;
         display: flex;
     }
 </style>

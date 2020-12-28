@@ -59,6 +59,21 @@
         font-size: 18px;
         font-weight: 400;
     }
+
+    @media (max-width: 600px) {
+        .title .description {
+            font-size: 20px;
+        }
+
+        .title .class-name {
+            font-size: 14px;
+        }
+
+        .due-date,
+        .due-date span {
+            font-size: 16px;
+        }
+    }
 </style>
 
 {#await assignments}

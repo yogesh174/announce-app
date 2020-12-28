@@ -9,6 +9,7 @@
 
 <style>
     a {
+        font-family: "DM Sans", sans-serif;
         border-radius: 8px;
         border: 2px solid;
         padding: 0.3em 0.8em;
@@ -55,7 +56,11 @@
     }
 </style>
 
-<a href={link} class={active ? 'active' : 'normal'} target="_blank">
+<a
+    href={link}
+    class={active ? 'active' : 'normal'}
+    target="_blank"
+    rel="noopener">
     <div class="icon">
         {#if type === 'meet'}
             <IconVideo color="#ffffff" />
