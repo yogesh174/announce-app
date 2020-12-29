@@ -1,7 +1,7 @@
 <script>
 	import Router from "svelte-spa-router";
 	import routes from "./routes";
-	import NavBar from "./components/NavBar.svelte";
+	import NavBar from "./components/Navbar.svelte";
 </script>
 
 <style>
