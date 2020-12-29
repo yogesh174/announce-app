@@ -102,7 +102,7 @@
 </style>
 
 <header>
-    <div class="logo"><a href="/#">Announce</a></div>
+    <div class="logo"><a href="/#/">Announce</a></div>
     <input
         type="checkbox"
         id="check"
