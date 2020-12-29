@@ -9,6 +9,7 @@
 
 <style>
     a {
+        font-family: "DM Sans", sans-serif;
         border-radius: 8px;
         border: 2px solid;
         padding: 0.3em 0.8em;
@@ -19,7 +20,7 @@
     }
 
     a.active {
-        color: #ffffff;
+        color: #f0f6fc;
         background-color: #2a9640;
         border-color: #389148;
         transition: 0.2s ease-in-out;
@@ -30,7 +31,7 @@
     }
 
     a.normal {
-        color: #ffffff;
+        color: #f0f6fc;
         background-color: #21262d;
         border-color: #383838;
         transition: 0.2s ease-in-out;
@@ -53,16 +54,37 @@
         font-size: 18px;
         font-weight: 400;
     }
+
+    @media (max-width: 830px) {
+        a {
+            margin: 8px 0;
+            max-width: 500px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: 440px) {
+        a {
+            font-size: 10px;
+        }
+    }
 </style>
 
-<a href={link} class={active ? 'active' : 'normal'} target="_blank">
+<a
+    href={link}
+    class={active ? 'active' : 'normal'}
+    target="_blank"
+    rel="noopener">
     <div class="icon">
         {#if type === 'meet'}
-            <IconVideo color="#ffffff" />
+            <IconVideo color="#F0F6FC" />
         {:else if type === 'file'}
-            <IconFileText color="#ffffff" />
+            <IconFileText color="#F0F6FC" />
         {:else if type === 'calendar'}
-            <IconCalendar color="#ffffff" />
+            <IconCalendar color="#F0F6FC" />
         {/if}
     </div>
     <div class="description">{description}</div>
