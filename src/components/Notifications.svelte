@@ -20,6 +20,7 @@
         border-color: #202020;
         border-style: solid;
         padding: 24px 36px;
+        margin: 8px 0;
     }
 
     .description {
@@ -48,6 +49,12 @@
 {#await descriptions}
     <div>Loading...</div>
 {:then descriptions}
+    {#if descriptions.length === 0}
+        <div class="no-assignments">
+            <img src="/belloff.svg" alt="no notifications" />
+            <div>No new Notifications</div>
+        </div>
+    {/if}
     {#each descriptions as description}
         <main>
             <div class="description">{description.description}</div>
