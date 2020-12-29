@@ -23,7 +23,8 @@
     }
 
     .description {
-        font-size: 20px;
+        font-size: 18px;
+        line-height: 150%;
     }
 
     @media (max-width: 600px) {
@@ -32,7 +33,7 @@
         }
 
         .description {
-            font-size: 18px;
+            font-size: 17px;
             line-height: 150%;
         }
     }

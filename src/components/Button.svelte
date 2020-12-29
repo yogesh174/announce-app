@@ -20,7 +20,7 @@
     }
 
     a.active {
-        color: #ffffff;
+        color: #f0f6fc;
         background-color: #2a9640;
         border-color: #389148;
         transition: 0.2s ease-in-out;
@@ -31,7 +31,7 @@
     }
 
     a.normal {
-        color: #ffffff;
+        color: #f0f6fc;
         background-color: #21262d;
         border-color: #383838;
         transition: 0.2s ease-in-out;
@@ -63,11 +63,11 @@
     rel="noopener">
     <div class="icon">
         {#if type === 'meet'}
-            <IconVideo color="#ffffff" />
+            <IconVideo color="#F0F6FC" />
         {:else if type === 'file'}
-            <IconFileText color="#ffffff" />
+            <IconFileText color="#F0F6FC" />
         {:else if type === 'calendar'}
-            <IconCalendar color="#ffffff" />
+            <IconCalendar color="#F0F6FC" />
         {/if}
     </div>
     <div class="description">{description}</div>

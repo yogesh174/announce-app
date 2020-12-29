@@ -7,7 +7,7 @@
 <style>
   main {
     margin: 0 auto;
-    margin-top: 40px;
+    padding-top: 100px;
     display: flex;
     justify-content: space-evenly;
     width: 85%;

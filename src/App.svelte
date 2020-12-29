@@ -4,6 +4,12 @@
 	import NavBar from "./components/NavBar.svelte";
 </script>
 
+<style>
+	:global(*) {
+		color: #f0f6fc;
+	}
+</style>
+
 <NavBar />
 <Router {routes} />
 
