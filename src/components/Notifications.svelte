@@ -37,6 +37,12 @@
             line-height: 150%;
         }
     }
+
+    @media (max-width: 400px) {
+        main {
+            padding: 12px 18px;
+        }
+    }
 </style>
 
 {#await descriptions}

@@ -43,9 +43,11 @@
         opacity: 0.8;
     }
 
-    .date-info {
+    .date-info,
+    .files {
         display: flex;
         align-items: center;
+        margin: 8px 0;
     }
 
     .due-date {
@@ -61,6 +63,20 @@
         color: #57d263;
     }
 
+    @media (max-width: 1220px) {
+        .description {
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width: 830px) {
+        .date-info,
+        .files {
+            display: inline;
+            margin: 8px 0;
+        }
+    }
+
     @media (max-width: 600px) {
         .title .description {
             font-size: 20px;
@@ -73,6 +89,19 @@
         .due-date,
         .due-date span {
             font-size: 16px;
+        }
+    }
+
+    @media (max-width: 400px) {
+        main {
+            padding: 14px 20px;
+        }
+        .title .description {
+            font-size: 18px;
+        }
+
+        .title .class-name {
+            font-size: 12px;
         }
     }
 </style>
@@ -97,6 +126,14 @@
                             .join(
                                 '-'
                             ), `${assignment.title} ${assignment.course}`, assignment.description)} />
+            </div>
+            <div class="files">
+                {#each assignment.file_links as fileLink}
+                    <Button
+                        description={fileLink.name}
+                        type={fileLink.type}
+                        link={fileLink.link} />
+                {/each}
             </div>
         </main>
     {/each}

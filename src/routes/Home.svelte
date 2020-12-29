@@ -27,13 +27,13 @@
     font-size: 34px;
   }
 
-  @media (max-width: 1324px) {
+  @media (max-width: 1390px) {
     main {
       width: 95%;
     }
   }
 
-  @media (max-width: 960px) {
+  @media (max-width: 1220px) {
     main {
       flex-direction: column-reverse;
       width: 100%;
@@ -48,6 +48,16 @@
 
     .heading {
       font-size: 26px;
+    }
+  }
+  @media (max-width: 400px) {
+    .current-assignments,
+    .right-container {
+      margin: 0 20px;
+    }
+
+    p {
+      margin-bottom: 12px;
     }
   }
 </style>

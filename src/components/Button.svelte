@@ -54,6 +54,23 @@
         font-size: 18px;
         font-weight: 400;
     }
+
+    @media (max-width: 830px) {
+        a {
+            margin: 8px 0;
+            max-width: 500px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: 440px) {
+        a {
+            font-size: 10px;
+        }
+    }
 </style>
 
 <a
