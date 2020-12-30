@@ -109,6 +109,12 @@
 {#await assignments}
     <div>Loading...</div>
 {:then assignments}
+    {#if assignments.length === 0}
+        <div class="no-assignments">
+            <img src="/smiling.svg" alt="no assignments" />
+            <div>No assignments</div>
+        </div>
+    {/if}
     {#each assignments as assignment}
         <main>
             <div class="title">

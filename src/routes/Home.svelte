@@ -27,6 +27,17 @@
     font-size: 34px;
   }
 
+  :global(.no-assignments) {
+    text-align: center;
+  }
+
+  :global(.no-assignments > div) {
+    color: #21262d;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
   @media (max-width: 1390px) {
     main {
       width: 95%;
