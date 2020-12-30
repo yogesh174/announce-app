@@ -2,6 +2,12 @@
 	import Router from "svelte-spa-router";
 	import routes from "./routes";
 	import NavBar from "./components/Navbar.svelte";
+
+	const metadata = {
+		title: "Announce",
+		description: "Check College notifications easily",
+		image: "/favicon.png",
+	};
 </script>
 
 <style>
