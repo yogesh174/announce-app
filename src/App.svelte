@@ -1,7 +1,7 @@
 <script>
 	import Router from "svelte-spa-router";
 	import routes from "./routes";
-	import NavBar from "./components/Navbar.svelte";
+  import NavBar from "./components/Navbar.svelte";
 
 	const metadata = {
 		title: "Announce",
@@ -13,6 +13,7 @@
 <style>
 	:global(*) {
 		color: #f0f6fc;
+		-webkit-tap-highlight-color: transparent;
 	}
 </style>
 
