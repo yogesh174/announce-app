@@ -2,7 +2,7 @@
   import CurrentAssignments from "../components/CurrentAssignments.svelte";
   import MeetLinks from "../components/MeetLinks.svelte";
   import Notifications from "../components/Notifications.svelte";
-  import {slimscroll} from "svelte-slimscroll";
+  import { slimscroll } from "svelte-slimscroll";
 </script>
 
 <style>
@@ -77,7 +77,8 @@
 <main>
   <div class="current-assignments">
     <p class="heading">Current Assignments</p>
-    <div use:slimscroll="{{height:"500px",alwaysVisible:true,color:"white",opacity:0.2,allowPageScroll:true,position:"right"}}">
+    <div
+      use:slimscroll={{ maxHeight: '500px', alwaysVisible: true, color: 'white', opacity: 0.2, allowPageScroll: true, position: 'right' }}>
       <CurrentAssignments />
     </div>
   </div>
@@ -88,9 +89,10 @@
     </div>
     <div class="notifications">
       <p class="heading">Notifications</p>
-      <div use:slimscroll="{{height:"400px",alwaysVisible:true,color:"white",opacity:0.2,allowPageScroll:true,position:"right"}}">
+      <div
+        use:slimscroll={{ maxHeight: '400px', alwaysVisible: true, color: 'white', opacity: 0.2, allowPageScroll: true, position: 'right' }}>
         <Notifications />
-      </div>      
+      </div>
     </div>
   </div>
 </main>
